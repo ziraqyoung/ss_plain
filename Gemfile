@@ -5,8 +5,8 @@ ruby '3.0.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+# Use PostgreSQL as the database for Active Record
+gem 'pg', '~> 1.2', '>= 1.2.3'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
@@ -50,6 +50,17 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+
+  # Fix error in Ruby 3
+  gem 'rexml', '~> 3.2', '>= 3.2.5'
+  # Bring `assert_template` & `assign`
+  gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
+  # pretty minitest ouput
+  gem 'minitest', '~> 5.14', '>= 5.14.4'
+  gem 'minitest-reporters', '~> 1.4', '>= 1.4.3'
+  # Automated testing upon file change
+  gem 'guard', '~> 2.17'
+  gem 'guard-minitest', '~> 2.4', '>= 2.4.6'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
